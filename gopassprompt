@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+function select_secret() {
+    app="iTerm"
+    secret_list=$(gopass ls --flat)
+
+    /usr/bin/osascript <<- EndOfScript
+
+    tell application "SystemUIServer"
+    activate
+    set the option_list to the paragraphs of "$(printf '%s\n' ${secret_list[@]})"
+    set the_selection to choose from list option_list with prompt "Select which password:"
+    end tell
+
+    tell application "$app"
+    activate
+    end tell
+
+    the_selection
+EndOfScript
+}
+
+# for gopass and gpg
+export PATH=$PATH:/usr/local/bin
+
+selected=$(select_secret)
+password=$(gopass show -o $selected)
+echo $password
