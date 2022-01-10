@@ -21,7 +21,7 @@ EndOfScript
 }
 
 # for gopass and gpg
-export PATH=$PATH:/usr/local/bin
+export PATH=$PATH:/usr/local/bin:/opt/homebrew/bin
 
 selected=$(select_secret)
 password=$(gopass show -o $selected)

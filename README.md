@@ -22,9 +22,9 @@ This script relies on following packages to be pre-install on MacOS.
 Simply copy `gopassprompt` to your system (e.g /usr/local/bin/gopassprompt) and ensure it is executable.
 
 Now create a keyboard shortcut in iTerm2 from the following paths: iTerm2
-`Preferences -> keys` or `Preferences -> Profiles -> keys`, add a `Key Mapping`:
+`Preferences -> Keys` or `Preferences -> Profiles -> Keys`, add a `Key Mapping`:
 
-    * Set the key combination to "⌘\" (or other key you like)
+    * Set the key combination to "⌘'" (or other key you like)
     * Set the action to "Run Coprocess"
     * And the third field to the path where gopassprompt is located
 
